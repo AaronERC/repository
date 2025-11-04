@@ -52,13 +52,58 @@
             font-size: 18px;
         }
 
+        /* INTRO SECTION */
+        .intro-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgb(67, 66, 71);
+            padding: 40px;
+            margin: 50px;
+            flex-wrap: wrap;
+        }
+
+        .intro-text {
+            flex: 1;
+            background-color: rgba(80, 85, 90, .9);
+            color: #d3d3d3;
+            padding: 20px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .intro-text h1 {
+            font-size: 50pt;
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 20pt;
+            line-height: 1.4;
+        }
+
+        .image_container {
+            flex-shrink: 0;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image_container img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        /* ABOUT SECTION */
         .container {
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
             background-color: #ffffff;
-            height: 100vh;
+            flex-wrap: wrap;
         }
 
         .card {
@@ -68,13 +113,14 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             overflow: hidden;
+            flex-wrap: wrap;
         }
 
         .image-section {
             flex: 1;
             background: url('images/IMG_7606.PNG') no-repeat center center;
             background-size: cover;
-            min-height: 500px;
+            min-height: 400px;
         }
 
         .text-section {
@@ -136,6 +182,41 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            .intro-section {
+                flex-direction: column;
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .intro-text h1 {
+                font-size: 32pt;
+            }
+
+            .intro-text p {
+                font-size: 16pt;
+            }
+
+            .container {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .text-section {
+                padding: 20px;
+            }
+
+            .image-section {
+                min-height: 250px;
+            }
+
+            .navbar li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 
@@ -153,20 +234,18 @@
     </div>
 
     <!-- INTRO SECTION -->
-    <div style="padding: 2%; background-color: rgb(67, 66, 71); margin: 50px; display: flex; align-items: center; padding-top: 40px;">
-        <div style="background-color: rgba(80, 85, 90, .9); flex: 1; padding: 20px; margin-right: 100px; z-index: 2;">
-            <h1 style="color: #d3d3d3; font-family: Arial, Helvetica, sans-serif; text-align: center; font-size: 50pt;">
-                Aaron Richmond-Crosset
-            </h1>
-            <p style="color: #d3d3d3; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; font-size: 20pt;">
+    <div class="intro-section">
+        <div class="intro-text">
+            <h1>Aaron Richmond-Crosset</h1>
+            <p>
                 Welcome to my website! I am a student at Clark University pursuing my Master’s in Geographic Information Science.
                 I anticipate graduating in Spring 2025. I am interested in cartography, spatial modeling, and urban forestry.
             </p>
         </div>
 
-        <div class="image_container" style="flex-shrink: 0; width: 400px; margin-left: 100px; z-index: 1;">
+        <div class="image_container">
             <a href="https://lcluc.umd.edu/projects/irrigation-climate-change-adaptation-cerrado-biome-brazil-evaluated-new-quantitative" target="_blank">
-                <img src="images/IMG_7606.PNG" width="700px" alt="Project Image">
+                <img src="images/IMG_7606.PNG" alt="Project Image">
             </a>
         </div>
     </div>
